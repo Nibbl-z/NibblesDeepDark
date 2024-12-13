@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "base": {
+    "item": "nibbles-deep-dark:sculk_heart"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:sniffer_spawn_egg"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}
