@@ -3,7 +3,9 @@ package xyz.nibbles.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import xyz.nibbles.item.ModItems;
@@ -17,6 +19,15 @@ public class RecipeDatagen extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter recipeExporter) {
-        offerNetheriteUpgradeRecipe(recipeExporter, ModItems.SCULK_HEART, RecipeCategory.TOOLS, Items.SNIFFER_SPAWN_EGG);
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.SCULK_HEART),
+                Ingredient.ofItems(Items.NETHERITE_SWORD),
+                Ingredient.ofItems(Items.ECHO_SHARD),
+                RecipeCategory.TOOLS,
+                ModItems.ECHO_SWORD
+        )
+                .criterion("has_echo_shard", conditionsFromItem(Items.ECHO_SHARD))
+                .offerTo(recipeExporter, getItemPath(ModItems.ECHO_SWORD) + "_smithing");
+
     }
 }

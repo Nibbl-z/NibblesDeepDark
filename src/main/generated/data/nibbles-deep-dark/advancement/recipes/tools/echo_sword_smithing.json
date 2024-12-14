@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_netherite_ingot": {
+    "has_echo_shard": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:netherite_ingot"
+            "items": "minecraft:echo_shard"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:sniffer_spawn_egg_smithing"
+        "recipe": "minecraft:echo_sword_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_netherite_ingot"
+      "has_echo_shard"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:sniffer_spawn_egg_smithing"
+      "minecraft:echo_sword_smithing"
     ]
   }
 }

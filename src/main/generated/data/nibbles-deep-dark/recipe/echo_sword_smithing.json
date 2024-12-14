@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:echo_shard"
+  },
+  "base": {
+    "item": "minecraft:netherite_sword"
+  },
+  "result": {
+    "count": 1,
+    "id": "nibbles-deep-dark:echo_sword"
+  },
+  "template": {
+    "item": "nibbles-deep-dark:sculk_heart"
+  }
+}

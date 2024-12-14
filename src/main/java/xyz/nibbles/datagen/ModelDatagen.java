@@ -20,5 +20,6 @@ public class ModelDatagen extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.SCULK_HEART, Models.GENERATED);
+        itemModelGenerator.register(ModItems.ECHO_SWORD, Models.HANDHELD);
     }
 }
