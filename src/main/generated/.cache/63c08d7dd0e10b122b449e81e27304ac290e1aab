@@ -1,3 +1,5 @@
-// 1.21.1	2024-12-13T16:34:34.316652	Nibbles' Deep Dark/Recipes
+// 1.21.1	2024-12-14T11:03:21.1056376	Nibbles' Deep Dark/Recipes
+ef491043d6ccefe133a6fbb64cf6da89ec280b98 data\nibbles-deep-dark\recipe\echo_axe_smithing.json
 100ebb53f2295c594db703e6fd714c916860af11 data\nibbles-deep-dark\recipe\echo_sword_smithing.json
+7b0dcc151ab72f40cc11e75589209ab9852a7253 data\nibbles-deep-dark\advancement\recipes\tools\echo_axe_smithing.json
 100e79639c6eb09bcf03bdde8f5d32e087f90cad data\nibbles-deep-dark\advancement\recipes\tools\echo_sword_smithing.json

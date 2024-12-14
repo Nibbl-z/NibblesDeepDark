@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "nibbles-deep-dark:item/echo_axe"
+  }
+}
