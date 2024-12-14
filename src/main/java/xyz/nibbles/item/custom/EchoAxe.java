@@ -3,6 +3,7 @@ package xyz.nibbles.item.custom;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
@@ -11,8 +12,9 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.random.Random;
-public class EchoSword extends SwordItem {
-    public EchoSword(ToolMaterial toolMaterial, Settings settings) {
+
+public class EchoAxe extends AxeItem {
+    public EchoAxe(ToolMaterial toolMaterial, Settings settings) {
         super(toolMaterial, settings);
     }
 

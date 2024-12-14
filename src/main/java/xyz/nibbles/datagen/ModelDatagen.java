@@ -21,5 +21,6 @@ public class ModelDatagen extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.SCULK_HEART, Models.GENERATED);
         itemModelGenerator.register(ModItems.ECHO_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.ECHO_AXE, Models.HANDHELD);
     }
 }

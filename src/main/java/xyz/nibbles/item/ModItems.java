@@ -8,6 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import xyz.nibbles.NibblesDeepDark;
+import xyz.nibbles.item.custom.EchoAxe;
 import xyz.nibbles.item.custom.EchoSword;
 
 public class ModItems {
@@ -29,10 +30,20 @@ public class ModItems {
             "echo_sword"
     );
 
+    public static final Item ECHO_AXE = register(
+            new EchoAxe(EchoMaterial.INSTANCE, new Item.Settings()
+                    .attributeModifiers(SwordItem.createAttributeModifiers(
+                            EchoMaterial.INSTANCE, 6, -4F
+                    ))),
+            "echo_axe"
+    );
+
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.add(ModItems.SCULK_HEART));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
                 .register((itemGroup) -> itemGroup.add(ModItems.ECHO_SWORD));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(ModItems.ECHO_AXE));
     }
 }

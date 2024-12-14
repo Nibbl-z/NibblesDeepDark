@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -17,17 +18,21 @@ public class RecipeDatagen extends FabricRecipeProvider {
         super(output, registriesFuture);
     }
 
+    public void offerEchoUpgradeRecipe(RecipeExporter recipeExporter, Item input, Item result) {
+        SmithingTransformRecipeJsonBuilder.create(
+                        Ingredient.ofItems(ModItems.SCULK_HEART),
+                        Ingredient.ofItems(input),
+                        Ingredient.ofItems(Items.ECHO_SHARD),
+                        RecipeCategory.TOOLS,
+                        result
+                )
+                .criterion("has_echo_shard", conditionsFromItem(Items.ECHO_SHARD))
+                .offerTo(recipeExporter, getItemPath(result) + "_smithing");
+    }
+
     @Override
     public void generate(RecipeExporter recipeExporter) {
-        SmithingTransformRecipeJsonBuilder.create(
-                Ingredient.ofItems(ModItems.SCULK_HEART),
-                Ingredient.ofItems(Items.NETHERITE_SWORD),
-                Ingredient.ofItems(Items.ECHO_SHARD),
-                RecipeCategory.TOOLS,
-                ModItems.ECHO_SWORD
-        )
-                .criterion("has_echo_shard", conditionsFromItem(Items.ECHO_SHARD))
-                .offerTo(recipeExporter, getItemPath(ModItems.ECHO_SWORD) + "_smithing");
-
+        offerEchoUpgradeRecipe(recipeExporter, Items.NETHERITE_SWORD, ModItems.ECHO_SWORD);
+        offerEchoUpgradeRecipe(recipeExporter, Items.NETHERITE_AXE, ModItems.ECHO_AXE);
     }
 }
