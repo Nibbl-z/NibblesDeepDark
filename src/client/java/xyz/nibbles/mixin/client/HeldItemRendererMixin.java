@@ -1,12 +1,14 @@
 package xyz.nibbles.mixin.client;
 
 import net.minecraft.client.network.AbstractClientPlayerEntity;
+import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.item.HeldItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.Arm;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
@@ -16,6 +18,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import xyz.nibbles.NibblesDeepDark;
 import xyz.nibbles.item.ModItems;
 
@@ -36,6 +39,11 @@ public class HeldItemRendererMixin {
 		matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((float)i * g * -20.0F));
 		matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(g * -80.0F));
 		matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees((float)i * -45.0F));
+	}
+
+	@Inject(at = @At("HEAD"), method = "isChargedCrossbow", cancellable = true)
+	private static void isChargedCrossbow(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
+		cir.setReturnValue((stack.isOf(Items.CROSSBOW) || stack.isOf(ModItems.ECHO_CROSSBOW)) && CrossbowItem.isCharged(stack));
 	}
 
 	@Inject(at = @At("HEAD"), method = "renderFirstPersonItem")
@@ -95,6 +103,10 @@ public class HeldItemRendererMixin {
 						light
 				);
 			}
+
+			matrices.pop();
 		}
+
+
 	}
 }
