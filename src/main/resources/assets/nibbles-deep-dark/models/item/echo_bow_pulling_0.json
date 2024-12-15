@@ -1,0 +1,6 @@
+{
+  "parent": "nibbles-deep-dark:item/echo_bow",
+  "textures": {
+    "layer0": "nibbles-deep-dark:item/echo_bow_pulling_0"
+  }
+}

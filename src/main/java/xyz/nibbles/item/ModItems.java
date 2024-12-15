@@ -9,6 +9,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import xyz.nibbles.NibblesDeepDark;
 import xyz.nibbles.item.custom.EchoAxe;
+import xyz.nibbles.item.custom.EchoBow;
 import xyz.nibbles.item.custom.EchoSword;
 
 public class ModItems {
@@ -33,9 +34,14 @@ public class ModItems {
     public static final Item ECHO_AXE = register(
             new EchoAxe(EchoMaterial.INSTANCE, new Item.Settings()
                     .attributeModifiers(SwordItem.createAttributeModifiers(
-                            EchoMaterial.INSTANCE, 6, -4F
+                            EchoMaterial.INSTANCE, 6, -3F
                     ))),
             "echo_axe"
+    );
+
+    public static final Item ECHO_BOW = register(
+            new EchoBow(new Item.Settings().maxDamage(550)),
+            "echo_bow"
     );
 
     public static void initialize() {
