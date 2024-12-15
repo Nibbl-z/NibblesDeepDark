@@ -3,7 +3,7 @@
 	"package": "xyz.nibbles.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"client.HeldItemRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

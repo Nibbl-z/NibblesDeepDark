@@ -1,0 +1,6 @@
+{
+  "parent": "nibbles-deep-dark:item/echo_crossbow",
+  "textures": {
+    "layer0": "nibbles-deep-dark:item/echo_crossbow_arrow"
+  }
+}

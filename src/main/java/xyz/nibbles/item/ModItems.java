@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 import xyz.nibbles.NibblesDeepDark;
 import xyz.nibbles.item.custom.EchoAxe;
 import xyz.nibbles.item.custom.EchoBow;
+import xyz.nibbles.item.custom.EchoCrossbow;
 import xyz.nibbles.item.custom.EchoSword;
 
 public class ModItems {
@@ -42,6 +43,11 @@ public class ModItems {
     public static final Item ECHO_BOW = register(
             new EchoBow(new Item.Settings().maxDamage(550)),
             "echo_bow"
+    );
+
+    public static final Item ECHO_CROSSBOW = register(
+            new EchoCrossbow(new Item.Settings().maxDamage(550)),
+            "echo_crossbow"
     );
 
     public static void initialize() {
