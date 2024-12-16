@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "D": {
+      "item": "nibbles-deep-dark:sculk_dust"
+    },
+    "S": {
+      "item": "minecraft:arrow"
+    }
+  },
+  "pattern": [
+    " D ",
+    "DSD",
+    " D "
+  ],
+  "result": {
+    "count": 1,
+    "id": "nibbles-deep-dark:sculk_arrow"
+  }
+}

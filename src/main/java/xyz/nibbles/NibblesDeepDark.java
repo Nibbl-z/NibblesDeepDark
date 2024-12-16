@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import xyz.nibbles.item.ModItems;
+import xyz.nibbles.loottable.ModLootTables;
 
 public class NibblesDeepDark implements ModInitializer {
 	public static final String MOD_ID = "nibbles-deep-dark";
@@ -22,5 +23,6 @@ public class NibblesDeepDark implements ModInitializer {
 
 		LOGGER.info("Hello Fabric world!");
 		ModItems.initialize();
+		ModLootTables.initialize();
 	}
 }

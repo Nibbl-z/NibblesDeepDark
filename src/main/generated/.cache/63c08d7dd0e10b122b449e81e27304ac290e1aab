@@ -1,5 +1,11 @@
-// 1.21.1	2024-12-14T11:03:21.1056376	Nibbles' Deep Dark/Recipes
+// 1.21.1	2024-12-15T19:55:50.8358453	Nibbles' Deep Dark/Recipes
+1915773007dc4c9bf0546ec71d956716d32c2d84 data\nibbles-deep-dark\advancement\recipes\tools\echo_crossbow_smithing.json
+991b7440f4ab2cf78d57e083fccbc5f8664b8572 data\nibbles-deep-dark\recipe\sculk_arrow_shaped.json
 ef491043d6ccefe133a6fbb64cf6da89ec280b98 data\nibbles-deep-dark\recipe\echo_axe_smithing.json
+42e6c1a0e39d2051b47c4c7558bc9bbeef9bb7f4 data\nibbles-deep-dark\advancement\recipes\tools\echo_bow_smithing.json
+6f5c832832451b1c2199502a2d3aec193384b72f data\nibbles-deep-dark\advancement\recipes\combat\sculk_arrow_shaped.json
 100ebb53f2295c594db703e6fd714c916860af11 data\nibbles-deep-dark\recipe\echo_sword_smithing.json
 7b0dcc151ab72f40cc11e75589209ab9852a7253 data\nibbles-deep-dark\advancement\recipes\tools\echo_axe_smithing.json
+9046524e833e8cf29e6f7b8b96db329a0371a2ce data\nibbles-deep-dark\recipe\echo_bow_smithing.json
+3fa79034526c2b6d5142711d7cfb1bb95cf48956 data\nibbles-deep-dark\recipe\echo_crossbow_smithing.json
 100e79639c6eb09bcf03bdde8f5d32e087f90cad data\nibbles-deep-dark\advancement\recipes\tools\echo_sword_smithing.json

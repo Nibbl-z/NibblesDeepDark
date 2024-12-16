@@ -1,6 +1,7 @@
 package xyz.nibbles.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.item.ArrowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.SwordItem;
@@ -22,6 +23,16 @@ public class ModItems {
     public static final Item SCULK_HEART = register(
             new Item(new Item.Settings()),
             "sculk_heart"
+    );
+
+    public static final Item SCULK_DUST = register(
+            new Item(new Item.Settings()),
+            "sculk_dust"
+    );
+
+    public static final Item SCULK_ARROW = register(
+            new ArrowItem(new Item.Settings()),
+            "sculk_arrow"
     );
 
     public static final Item ECHO_SWORD = register(
@@ -53,9 +64,18 @@ public class ModItems {
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.add(ModItems.SCULK_HEART));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+                .register((itemGroup) -> itemGroup.add(ModItems.SCULK_DUST));
+
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
                 .register((itemGroup) -> itemGroup.add(ModItems.ECHO_SWORD));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
                 .register((itemGroup) -> itemGroup.add(ModItems.ECHO_AXE));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(ModItems.ECHO_BOW));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(ModItems.ECHO_CROSSBOW));
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT)
+                .register((itemGroup) -> itemGroup.add(ModItems.SCULK_ARROW));
     }
 }

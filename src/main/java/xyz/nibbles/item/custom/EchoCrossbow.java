@@ -23,13 +23,17 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import org.jetbrains.annotations.Nullable;
+import xyz.nibbles.item.ModItems;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class EchoCrossbow extends CrossbowItem {
     public EchoCrossbow(Settings settings) {
         super(settings);
     }
+
+    public static final Predicate<ItemStack> SCULK_ARROW_PROJECTILES = stack -> stack.isOf(ModItems.SCULK_ARROW);
 
     @Override
     protected void shoot(LivingEntity shooter, ProjectileEntity projectile, int index, float speed, float divergence, float yaw, @Nullable LivingEntity target) {
@@ -81,5 +85,10 @@ public class EchoCrossbow extends CrossbowItem {
         }
 
         projectile.remove(Entity.RemovalReason.DISCARDED);
+    }
+
+    @Override
+    public Predicate<ItemStack> getProjectiles() {
+        return SCULK_ARROW_PROJECTILES;
     }
 }
