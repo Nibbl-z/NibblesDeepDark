@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
@@ -19,8 +21,9 @@ import xyz.nibbles.item.ModItems;
 public class ModLootTables {
     public static void initialize() {
         final RegistryKey<LootTable> SCULK_LOOT_TABLE_KEY = Blocks.SCULK.getLootTableKey();
+        final RegistryKey<LootTable> WARDEN_LOOT_TABLE_KEY = EntityType.WARDEN.getLootTableId();
 
-        LootTableEvents.MODIFY.register(((registryKey, builder, lootTableSource, wrapperLookup) -> {
+        LootTableEvents.MODIFY.register((registryKey, builder, lootTableSource, wrapperLookup) -> {
             if (registryKey.equals(SCULK_LOOT_TABLE_KEY)) {
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .with(ItemEntry.builder(ModItems.SCULK_DUST))
@@ -28,6 +31,15 @@ public class ModLootTables {
 
                 builder.pool(poolBuilder);
             }
-        }));
+
+            if (registryKey.equals(WARDEN_LOOT_TABLE_KEY)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .with(ItemEntry.builder(ModItems.SCULK_HEART));
+
+                builder.pool(poolBuilder);
+            }
+        });
+
+
     }
 }
